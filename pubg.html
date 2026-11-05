@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>زخرفة اسماء ببجي موبايل – أسماء مزخرفة للنسخ</title>
+<meta name="description" content="زخرفة اسماء ببجي موبايل مجاناً: اكتب اسمك وانسخ زخارف مرتبة حسب الأرجح قبولاً في ببجي، بدون مسافات ومع عداد لحد الأحرف.">
+<meta name="theme-color" content="#0a0e27">
+<link rel="canonical" href="https://golden4422l.github.io/pubg.html">
+<!-- مكان كود AdSense لاحقاً: ضعه هنا بعد قبول الموقع -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e27;
+    --panel: #121a45;
+    --line: #2a3584;
+    --cyan: #35e0ff;
+    --gold: #ffc83d;
+    --gold-ink: #241800;
+    --text: #eaf0ff;
+    --muted: #9aa6d8;
+    --ok: #46f0b4;
+    --warn: #ff9f43;
+    --bad: #ff5d73;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--text);
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(rgba(53,224,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(53,224,255,.045) 1px, transparent 1px);
+    background-size: 38px 38px;
+    font-family: "Tajawal", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 34px 18px 56px; }
+
+  h1 {
+    font-family: "Reem Kufi", "Tajawal", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 8.5vw, 3.7rem);
+    line-height: 1.2;
+    margin: 0 0 8px;
+    color: var(--gold);
+    text-shadow: 3px 3px 0 rgba(53,224,255,.35);
+  }
+  .lead { margin: 0 0 24px; color: var(--muted); max-width: 54ch; }
+
+  /* اختيار اللعبة */
+  .modes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+  .mode {
+    font: inherit;
+    font-family: "Reem Kufi", "Tajawal", sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 11px 6px;
+    color: var(--muted);
+    background: var(--panel);
+    border: 0;
+    box-shadow: inset 0 0 0 2px var(--line);
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    cursor: pointer;
+  }
+  .mode:hover { color: var(--text); box-shadow: inset 0 0 0 2px var(--cyan); }
+  .mode[aria-pressed="true"] { color: var(--gold-ink); background: var(--gold); box-shadow: none; }
+
+  .field { display: flex; gap: 8px; align-items: stretch; }
+  .field input {
+    flex: 1;
+    min-width: 0;
+    font: inherit;
+    font-size: 1.35rem;
+    padding: 13px 16px;
+    color: var(--text);
+    background: var(--panel);
+    border: 2px solid var(--line);
+    border-inline-start: 7px solid var(--gold);
+    border-radius: 0;
+  }
+  .field input::placeholder { color: #6672b5; }
+  .field input:focus { outline: none; border-color: var(--cyan); border-inline-start-color: var(--gold); }
+  .field button {
+    font-family: "Reem Kufi", "Tajawal", sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 0 22px;
+    color: var(--gold-ink);
+    background: var(--gold);
+    border: 0;
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+    cursor: pointer;
+  }
+  .field button:hover { filter: brightness(1.1); }
+
+  /* عداد الأحرف */
+  .meter-row { margin-top: 12px; min-height: 44px; }
+  .meter-label { display: flex; justify-content: space-between; font-size: .92rem; color: var(--muted); margin-bottom: 4px; }
+  .meter { height: 12px; background: var(--bg); border: 2px solid var(--line); }
+  .meter i { display: block; height: 100%; width: 0; background: var(--cyan); transition: width .15s ease; }
+  .meter.warn i { background: var(--gold); }
+  .meter.bad i { background: var(--bad); }
+  .meter-label.bad { color: var(--bad); }
+
+  .note {
+    margin: 14px 0 0;
+    padding: 10px 14px;
+    background: rgba(18,26,69,.8);
+    border-inline-start: 4px solid var(--cyan);
+    color: var(--muted);
+    font-size: .95rem;
+  }
+  .note p { margin: 0; }
+  .note p + p { margin-top: 4px; }
+
+  section.group { margin-top: 30px; }
+  .ghead { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  h2 { font-family: "Reem Kufi", "Tajawal", sans-serif; font-size: 1.25rem; font-weight: 700; margin: 0; }
+  .badge { font-size: .82rem; padding: 1px 10px; border: 1px solid; }
+  .badge.likely { color: var(--ok); border-color: var(--ok); }
+  .badge.maybe { color: var(--warn); border-color: var(--warn); }
+  ul.list { list-style: none; margin: 8px 0 0; padding: 0; border-top: 2px solid var(--line); }
+  ul.list li { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .deco {
+    flex: 1;
+    min-width: 0;
+    text-align: right;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    font-family: "Noto Sans Symbols 2", "Noto Sans Math", "Segoe UI Symbol", "Apple Symbols", "Tajawal", system-ui, sans-serif;
+  }
+  .len { flex: none; font-size: .85rem; color: var(--muted); min-width: 34px; text-align: center; }
+  li.over .deco { opacity: .4; }
+  li.over .len { color: var(--bad); }
+  .copy {
+    flex: none;
+    min-width: 76px;
+    font: inherit;
+    font-weight: 700;
+    font-size: .95rem;
+    padding: 7px 14px;
+    color: var(--gold-ink);
+    background: var(--gold);
+    border: 0;
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+    cursor: pointer;
+  }
+  .copy:hover { filter: brightness(1.1); }
+  .copy.done { background: var(--ok); }
+  :focus-visible { outline: 3px solid var(--cyan); outline-offset: 2px; }
+
+  .about { margin-top: 56px; padding-top: 24px; border-top: 2px solid var(--line); }
+  .about p, .about ol { color: var(--muted); max-width: 64ch; }
+  .about ol { padding-inline-start: 22px; }
+  details { border-bottom: 1px solid var(--line); padding: 12px 0; }
+  summary { cursor: pointer; font-weight: 700; color: var(--text); }
+  details p { margin: 8px 0 0; }
+  footer { margin-top: 40px; color: #6672b5; font-size: .88rem; }
+
+  @media (max-width: 480px) {
+    body { font-size: 16px; }
+    .wrap { padding: 24px 14px 48px; }
+    .field input { font-size: 1.15rem; }
+    .deco { font-size: 1.2rem; }
+    .copy { min-width: 66px; padding: 7px 10px; }
+    .len { min-width: 26px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .meter i { transition: none; }
+  }
+
+  .nav { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 22px; }
+  .nav a {
+    color: var(--muted); text-decoration: none; padding: 6px 16px;
+    font-family: "Reem Kufi", "Tajawal", sans-serif; font-weight: 700;
+    box-shadow: inset 0 0 0 2px var(--line);
+    clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  }
+  .nav a:hover { color: var(--text); box-shadow: inset 0 0 0 2px var(--cyan); }
+  .nav a[aria-current="page"] { color: var(--gold-ink); background: var(--gold); box-shadow: none; }
+  footer .links { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 8px; }
+  footer a { color: var(--muted); }
+  .doc { max-width: 64ch; }
+  .doc h2 { font-family: "Reem Kufi", "Tajawal", sans-serif; font-size: 1.25rem; margin: 28px 0 6px; color: var(--text); }
+  .doc p, .doc li { color: var(--muted); }
+  .doc ol, .doc ul { padding-inline-start: 22px; }
+  .doc a { color: var(--cyan); }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <nav class="nav" aria-label="التنقل"><a href="/">الرئيسية</a><a href="/pubg.html" aria-current="page">ببجي</a><a href="/freefire.html">فري فاير</a></nav>
+  <h1>زخرفة اسماء ببجي</h1>
+  <p class="lead">اكتب اسمك ونرتب لك الأشكال الأرجح قبولاً في ببجي موبايل أولاً، بدون مسافات وبعدّاد للأحرف.</p>
+
+  <div class="modes" role="group" aria-label="اختر اللعبة">
+    <button type="button" class="mode" data-mode="pubg" aria-pressed="true">ببجي</button>
+    <button type="button" class="mode" data-mode="ff" aria-pressed="false">فري فاير</button>
+    <button type="button" class="mode" data-mode="any" aria-pressed="false">أي مكان</button>
+  </div>
+
+  <div class="field">
+    <input id="name" type="text" maxlength="30" placeholder="اكتب اسمك هنا" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="اكتب الاسم الذي تريد زخرفته">
+    <button id="go" type="button">زخرفة</button>
+  </div>
+
+  <div class="meter-row" id="meterRow" hidden>
+    <div class="meter-label" id="meterLabel"><span id="meterText"></span><span id="meterLimit"></span></div>
+    <div class="meter" id="meter"><i id="meterFill"></i></div>
+  </div>
+
+  <div class="note" id="note" aria-live="polite"></div>
+
+  <div id="results"></div>
+
+  <section class="about">
+    <h2>كيف تضع اسماً مزخرفاً في ببجي موبايل</h2>
+    <ol>
+      <li>اكتب اسمك في الخانة فوق، ثم انسخ الزخرفة التي تعجبك.</li>
+      <li>في اللعبة افتح خانة تغيير الاسم. تغيير الاسم يحتاج غالباً بطاقة تغيير اسم.</li>
+      <li>الصق الاسم وتأكد أنه يظهر بشكل صحيح قبل أن تضغط تأكيد.</li>
+    </ol>
+
+    <h2 style="margin-top:28px">ما الذي يُرجَّح أن ببجي يقبله؟</h2>
+    <p>هذه المعلومات من مصادر لاعبين غير رسمية، وقد تتغير مع تحديثات اللعبة. تذكر المصادر أن الحروف اللاتينية ذات اللمسات (مثل Šħàđòŵ) والحروف الآسيوية مثل ㄚ و乙 وإطار ツ تُقبل في الغالب. وتذكر أن المسافة العادية لا تُقبل، لذلك نحذفها تلقائياً في هذه الصفحة. أما بقية الخطوط والإطارات فنضعها تحت «غير مؤكد»، جرّبها قبل التأكيد.</p>
+    <p>الحد الأقصى لعدد الأحرف يختلف بين المصادر (حوالي 16)، لذلك نعرض عداداً للمساعدة فقط.</p>
+
+    <h2 style="margin-top:28px">أسئلة عن زخرفة أسماء ببجي</h2>
+    <details>
+      <summary>ظهرت رسالة «حرف غير صالح»، ماذا أفعل؟</summary>
+      <p>اللعبة لا تدعم أحد الرموز. اختر شكلاً من «الأرجح قبولاً»، أو اكتب اسماً أقصر، أو بدّل الإطار.</p>
+    </details>
+    <details>
+      <summary>هل يقبل ببجي الأسماء العربية؟</summary>
+      <p>لم نجد مصدراً يؤكد ذلك، لذلك نضعها تحت «غير مؤكد». جرّب الاسم في خانة التغيير قبل التأكيد.</p>
+    </details>
+    <details>
+      <summary>هل الموقع تابع لببجي؟</summary>
+      <p>لا، هو موقع مستقل ولا علاقة له بالشركة المطورة للعبة.</p>
+    </details>
+  </section>
+
+  <footer><div class="links"><a href="/about.html">من نحن</a><a href="/privacy.html">سياسة الخصوصية</a><a href="/contact.html">اتصل بنا</a></div>موقع مستقل غير تابع لببجي أو فري فاير أو أي شركة ألعاب.</footer>
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- أدوات مساعدة ---------- */
+  var cp = function (n) { return String.fromCodePoint(n); };
+  var len = function (s) { return Array.from(s).length; };
+
+  function range(U, L, D, ex) {
+    ex = ex || {};
+    return function (str) {
+      return Array.from(str).map(function (ch) {
+        if (ex[ch]) return ex[ch];
+        var c = ch.charCodeAt(0);
+        if (c >= 65 && c <= 90 && U !== null) return cp(U + c - 65);
+        if (c >= 97 && c <= 122 && L !== null) return cp(L + c - 97);
+        if (c >= 48 && c <= 57 && D !== null) return cp(D + c - 48);
+        return ch;
+      }).join("");
+    };
+  }
+
+  function table(map, reverse) {
+    return function (str) {
+      var out = Array.from(str).map(function (ch) {
+        var l = ch.toLowerCase();
+        return map[l] !== undefined ? map[l] : ch;
+      });
+      if (reverse) out.reverse();
+      return out.join("");
+    };
+  }
+
+  function combine(mark) {
+    return function (str) {
+      return Array.from(str).map(function (ch) {
+        return /[A-Za-z0-9]/.test(ch) ? ch + mark : ch;
+      }).join("");
+    };
+  }
+
+  var circled = function (str) {
+    return Array.from(str).map(function (ch) {
+      var c = ch.charCodeAt(0);
+      if (c >= 65 && c <= 90) return cp(0x24B6 + c - 65);
+      if (c >= 97 && c <= 122) return cp(0x24D0 + c - 97);
+      if (c === 48) return cp(0x24EA);
+      if (c >= 49 && c <= 57) return cp(0x2460 + c - 49);
+      return ch;
+    }).join("");
+  };
+
+  var negCircled = function (str) {
+    return Array.from(str).map(function (ch) {
+      var c = ch.toUpperCase().charCodeAt(0);
+      var d = ch.charCodeAt(0);
+      if (ch.length === 1 && c >= 65 && c <= 90 && /[A-Za-z]/.test(ch)) return cp(0x1F150 + c - 65);
+      if (d === 48) return cp(0x24FF);
+      if (d >= 49 && d <= 57) return cp(0x2776 + d - 49);
+      return ch;
+    }).join("");
+  };
+
+  var upperBoth = function (base) {
+    return function (str) {
+      return Array.from(str).map(function (ch) {
+        var c = ch.toUpperCase().charCodeAt(0);
+        if (ch.length === 1 && c >= 65 && c <= 90 && /[A-Za-z]/.test(ch)) return cp(base + c - 65);
+        return ch;
+      }).join("");
+    };
+  };
+
+  /* حروف لاتينية بلمسات (مثل Šhàđoŵ): ورد أن ببجي يقبل هذا النوع */
+  var accentLower = { a:"à",c:"ç",d:"đ",e:"é",g:"ğ",h:"ħ",i:"ì",k:"ķ",l:"ł",n:"ñ",o:"ò",r:"ŕ",s:"š",t:"ŧ",u:"ù",w:"ŵ",y:"ÿ",z:"ž" };
+  var accentUpper = { A:"Ä",C:"Ç",D:"Đ",E:"Ë",G:"Ğ",H:"Ħ",I:"Ï",K:"Ķ",L:"Ł",N:"Ñ",O:"Ö",R:"Ŕ",S:"Š",T:"Ŧ",U:"Ü",W:"Ŵ",Y:"Ÿ",Z:"Ž" };
+  var accent = function (str) {
+    return Array.from(str).map(function (ch) {
+      return accentUpper[ch] || accentLower[ch] || ch;
+    }).join("");
+  };
+
+  /* حروف بأسلوب آسيوي (مثل 乇ㄚ丂): ورد أن ببجي وفري فاير يقبلان حروفاً آسيوية */
+  var cjk = table({ a:"卂",b:"乃",c:"匚",d:"d",e:"乇",f:"千",g:"g",h:"卄",i:"丨",j:"ﾌ",k:"k",l:"ㄥ",m:"爪",n:"几",o:"ㄖ",p:"卩",q:"q",r:"尺",s:"丂",t:"ㄒ",u:"ㄩ",v:"v",w:"山",x:"乂",y:"ㄚ",z:"乙" });
+
+  var scriptEx = { B:"ℬ",E:"ℰ",F:"ℱ",H:"ℋ",I:"ℐ",L:"ℒ",M:"ℳ",R:"ℛ",e:"ℯ",g:"ℊ",o:"ℴ" };
+  var frakEx = { C:"ℭ",H:"ℌ",I:"ℑ",R:"ℜ",Z:"ℨ" };
+  var dsEx = { C:"ℂ",H:"ℍ",N:"ℕ",P:"ℙ",Q:"ℚ",R:"ℝ",Z:"ℤ" };
+  var boldScript = range(0x1D4D0, 0x1D4EA, 0x1D7CE);
+
+  /* ff: y = الأرجح قبولاً في فري فاير، m = غير مؤكد. pubg: y فقط للأشكال المذكورة في مصادر ببجي */
+  function F(fn, ff, pubg, extra) {
+    var o = { fn: fn, ff: ff, pubg: pubg || "m" };
+    if (extra) { for (var k in extra) o[k] = extra[k]; }
+    return o;
+  }
+
+  var fonts = [
+    F(range(0x1D4D0, 0x1D4EA, 0x1D7CE), "y"),
+    F(range(0x1D49C, 0x1D4B6, null, scriptEx), "y"),
+    F(range(0x1D400, 0x1D41A, 0x1D7CE), "y"),
+    F(range(0x1D468, 0x1D482, 0x1D7CE), "y"),
+    F(range(0x1D434, 0x1D44E, null, { h: "ℎ" }), "y"),
+    F(range(0x1D56C, 0x1D586, null), "y"),
+    F(range(0x1D504, 0x1D51E, null, frakEx), "y"),
+    F(range(0x1D538, 0x1D552, 0x1D7D8, dsEx), "y"),
+    F(range(0x1D5D4, 0x1D5EE, 0x1D7EC), "y"),
+    F(range(0x1D63C, 0x1D656, 0x1D7EC), "y"),
+    F(range(0x1D5A0, 0x1D5BA, 0x1D7E2), "y"),
+    F(range(0x1D670, 0x1D68A, 0x1D7F6), "y"),
+    F(circled, "m"),
+    F(negCircled, "m"),
+    F(upperBoth(0x1F130), "m"),
+    F(upperBoth(0x1F170), "m"),
+    F(range(0xFF21, 0xFF41, 0xFF10), "y"),
+    F(table({ a:"ᴀ",b:"ʙ",c:"ᴄ",d:"ᴅ",e:"ᴇ",f:"ꜰ",g:"ɢ",h:"ʜ",i:"ɪ",j:"ᴊ",k:"ᴋ",l:"ʟ",m:"ᴍ",n:"ɴ",o:"ᴏ",p:"ᴘ",q:"ǫ",r:"ʀ",s:"ꜱ",t:"ᴛ",u:"ᴜ",v:"ᴠ",w:"ᴡ",x:"x",y:"ʏ",z:"ᴢ" }), "y"),
+    F(table({ a:"ᵃ",b:"ᵇ",c:"ᶜ",d:"ᵈ",e:"ᵉ",f:"ᶠ",g:"ᵍ",h:"ʰ",i:"ⁱ",j:"ʲ",k:"ᵏ",l:"ˡ",m:"ᵐ",n:"ⁿ",o:"ᵒ",p:"ᵖ",q:"ᑫ",r:"ʳ",s:"ˢ",t:"ᵗ",u:"ᵘ",v:"ᵛ",w:"ʷ",x:"ˣ",y:"ʸ",z:"ᶻ","0":"⁰","1":"¹","2":"²","3":"³","4":"⁴","5":"⁵","6":"⁶","7":"⁷","8":"⁸","9":"⁹" }), "y"),
+    F(table({ a:"ɐ",b:"q",c:"ɔ",d:"p",e:"ǝ",f:"ɟ",g:"ƃ",h:"ɥ",i:"ᴉ",j:"ɾ",k:"ʞ",l:"l",m:"ɯ",n:"u",o:"o",p:"d",q:"b",r:"ɹ",s:"s",t:"ʇ",u:"n",v:"ʌ",w:"ʍ",x:"x",y:"ʎ",z:"z" }, true), "m"),
+    F(combine("\u0336"), "y"),
+    F(combine("\u0332"), "y"),
+    F(function (s) { return Array.from(s).join(" "); }, "m", "m", { spaced: true }),
+    F(accent, "y", "y"),
+    F(cjk, "y", "y")
+  ];
+
+  /* ---------- الكشيدة للأسماء العربية ---------- */
+  var nonJoin = "اأإآدذرزوؤةىء";
+  var isAr = function (c) { return /[\u0621-\u063F\u0641-\u064A]/.test(c); };
+
+  function stretch(str, n) {
+    var ch = Array.from(str.replace(/\u0640/g, ""));
+    var out = "";
+    for (var i = 0; i < ch.length; i++) {
+      var c = ch[i];
+      out += c;
+      if (!isAr(c)) continue;
+      var j = i + 1;
+      while (j < ch.length && /[\u064B-\u065F]/.test(ch[j])) { out += ch[j]; j++; }
+      i = j - 1;
+      if (nonJoin.indexOf(c) === -1 && j < ch.length && isAr(ch[j]) && ch[j] !== "ء") {
+        out += new Array(n + 1).join("\u0640");
+      }
+    }
+    return out;
+  }
+
+  /* ---------- الإطارات: [القالب، فري فاير، ببجي] ---------- */
+  var frames = [
+    ["꧁{n}꧂", "y"], ["༺{n}༻", "y"], ["★彡{n}彡★", "y"], ["【{n}】", "y"],
+    ["『{n}』", "y"], ["「{n}」", "y"], ["〘{n}〙", "y"], ["♛ {n} ♛", "y"],
+    ["⚔ {n} ⚔", "y"], ["✦ {n} ✦", "y"], ["☆•°{n}°•☆", "y"], ["ʚ {n} ɞ", "y"],
+    ["⋆˚｡ {n} ｡˚⋆", "y"], ["꧁༒{n}༒꧂", "y"], ["♡ {n} ♡", "y"],
+    ["ツ {n} ツ", "y", "y"], ["{n}ツ", "y", "y"], ["☬ {n} ☬", "y"],
+    ["▓▒░ {n} ░▒▓", "m"], ["☠ {n} ☠", "m"]
+  ];
+
+  var LIMITS = { pubg: 16, ff: 12, any: null };
+  var NOTES = {
+    pubg: [
+      "ببجي يرفض أحياناً بعض الرموز برسالة «حرف غير صالح»، ولا يقبل المسافة العادية، لذلك حذفناها لك.",
+      "الأرجح قبولاً: الحروف ذات اللمسات والحروف الآسيوية. الحد حوالي 16 حرفاً، وتختلف المصادر، فتأكد داخل اللعبة."
+    ],
+    ff: [
+      "فري فاير يقبل الإطارات والنجوم والقلوب والحروف الرياضية والآسيوية. الحد 12 حرفاً، وكل رمز يُحتسب.",
+      "هذه المعلومات من مصادر لاعبين غير رسمية، فتأكد داخل اللعبة قبل تأكيد تغيير الاسم."
+    ],
+    any: [
+      "كل الأشكال معروضة بدون ترتيب حسب لعبة. بعض التطبيقات تعرض الرموز النادرة كمربعات."
+    ]
+  };
+
+  /* ---------- العرض ---------- */
+  var mode = "pubg";
+  var input = document.getElementById("name");
+  var results = document.getElementById("results");
+  var note = document.getElementById("note");
+  var meterRow = document.getElementById("meterRow");
+  var meterEl = document.getElementById("meter");
+  var meterFill = document.getElementById("meterFill");
+  var meterLabel = document.getElementById("meterLabel");
+  var meterText = document.getElementById("meterText");
+  var meterLimit = document.getElementById("meterLimit");
+  var SAMPLE = "Shadow";
+
+  function copyText(text, btn) {
+    function done() {
+      btn.textContent = "تم النسخ";
+      btn.classList.add("done");
+      setTimeout(function () { btn.textContent = "نسخ"; btn.classList.remove("done"); }, 1400);
+    }
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+
+  function group(title, rows, badge, limit) {
+    var section = document.createElement("section");
+    section.className = "group";
+    var head = document.createElement("div");
+    head.className = "ghead";
+    var h = document.createElement("h2");
+    h.textContent = title;
+    head.appendChild(h);
+    if (badge) {
+      var b = document.createElement("span");
+      b.className = "badge " + badge.cls;
+      b.textContent = badge.text;
+      head.appendChild(b);
+    }
+    var ul = document.createElement("ul");
+    ul.className = "list";
+
+    rows
+      .map(function (r, i) { r.i = i; r.n = len(r.t); r.over = limit !== null && r.n > limit; return r; })
+      .sort(function (a, b) { return (a.over - b.over) || (a.i - b.i); })
+      .forEach(function (r, k) {
+        var li = document.createElement("li");
+        if (r.over) li.className = "over";
+        var span = document.createElement("span");
+        span.className = "deco";
+        span.setAttribute("dir", /[\u0600-\u06FF]/.test(r.t) ? "rtl" : "ltr");
+        span.textContent = r.t;
+        var count = document.createElement("span");
+        count.className = "len";
+        count.textContent = r.n;
+        count.title = r.over ? "يزيد عن الحد" : "عدد الأحرف";
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "copy";
+        btn.textContent = "نسخ";
+        btn.setAttribute("aria-label", "نسخ: " + title + " " + (k + 1));
+        var go = function () { copyText(r.t, btn); };
+        btn.addEventListener("click", go);
+        span.addEventListener("click", go);
+        li.appendChild(span);
+        if (limit !== null) li.appendChild(count);
+        li.appendChild(btn);
+        ul.appendChild(li);
+      });
+
+    section.appendChild(head);
+    section.appendChild(ul);
+    return section;
+  }
+
+  function build(name, hasLatin, hasArabic) {
+    var rows = [];
+    var seen = {};
+    seen[name] = true;
+    function add(t, g, likely) {
+      if (mode === "pubg") t = t.replace(/\s+/g, "");
+      if (seen[t]) return;
+      seen[t] = true;
+      rows.push({ t: t, g: g, likely: likely });
+    }
+
+    if (hasLatin) {
+      fonts.forEach(function (f) {
+        if (mode === "pubg" && f.spaced) return;
+        var likely = mode === "any" ? null : (f[mode] === "y" && !hasArabic);
+        add(f.fn(name), "fonts", likely);
+      });
+    }
+
+    var plainBase = stretch(boldScript(name), 1);
+    var accentBase = stretch(accent(name), 1);
+    frames.forEach(function (fr) {
+      var flag = mode === "any" ? null : (mode === "ff" ? fr[1] : (fr[2] || "m"));
+      var likely = mode === "any" ? null : (flag === "y" && !hasArabic);
+      var base = (mode === "pubg" && flag === "y") ? accentBase : plainBase;
+      add(fr[0].replace("{n}", base), "frames", likely);
+    });
+
+    if (hasArabic) {
+      [1, 2, 3].forEach(function (n) { add(stretch(name, n), "ar", mode === "any" ? null : false); });
+    }
+    return rows;
+  }
+
+  function render() {
+    var raw = input.value.trim();
+    var text = raw || SAMPLE;
+    var name = mode === "pubg" ? text.replace(/\s+/g, "") : text;
+    var limit = LIMITS[mode];
+    var hasLatin = /[A-Za-z0-9]/.test(name);
+    var hasArabic = /[\u0600-\u06FF]/.test(name);
+
+    /* ملاحظات */
+    note.textContent = "";
+    var lines = NOTES[mode].slice();
+    if (!raw) lines.unshift("هذا مثال. اكتب اسمك ليظهر بزخارف مختلفة.");
+    if (hasArabic && mode !== "any") lines.push("الأسماء العربية: لم نجد مصدراً يؤكد قبولها داخل اللعبة، فوضعناها تحت «غير مؤكد».");
+    lines.forEach(function (l) {
+      var p = document.createElement("p");
+      p.textContent = l;
+      note.appendChild(p);
+    });
+
+    /* العداد */
+    if (limit !== null && raw) {
+      var n = len(name);
+      meterRow.hidden = false;
+      meterText.textContent = "اسمك قبل الزخرفة: " + n;
+      meterLimit.textContent = "الحد: " + limit + (n > limit ? " (اسمك أطول من الحد)" : "");
+      meterFill.style.width = Math.min(100, Math.round(n / limit * 100)) + "%";
+      meterEl.className = "meter" + (n > limit ? " bad" : (n / limit >= 0.75 ? " warn" : ""));
+      meterLabel.className = "meter-label" + (n > limit ? " bad" : "");
+    } else {
+      meterRow.hidden = true;
+    }
+
+    /* النتائج */
+    results.textContent = "";
+    var rows = build(name, hasLatin, hasArabic);
+
+    if (mode === "any") {
+      var titles = { fonts: "خطوط مزخرفة", frames: "إطارات ورموز", ar: "للأسماء العربية: كشيدة" };
+      ["fonts", "frames", "ar"].forEach(function (g) {
+        var part = rows.filter(function (r) { return r.g === g; });
+        if (part.length) results.appendChild(group(titles[g], part, null, null));
+      });
+    } else {
+      var likelyRows = rows.filter(function (r) { return r.likely; });
+      var maybeRows = rows.filter(function (r) { return !r.likely; });
+      if (likelyRows.length) results.appendChild(group("الأرجح قبولاً", likelyRows, { cls: "likely", text: "حسب مصادر اللاعبين" }, limit));
+      if (maybeRows.length) results.appendChild(group("غير مؤكد", maybeRows, { cls: "maybe", text: "جرّب قبل التأكيد" }, limit));
+    }
+  }
+
+  /* ---------- الأحداث ---------- */
+  var buttons = document.querySelectorAll(".mode");
+  Array.prototype.forEach.call(buttons, function (b) {
+    b.addEventListener("click", function () {
+      mode = b.getAttribute("data-mode");
+      Array.prototype.forEach.call(buttons, function (x) {
+        x.setAttribute("aria-pressed", x === b ? "true" : "false");
+      });
+      render();
+    });
+  });
+  input.addEventListener("input", render);
+  function go() {
+    render();
+    if (results.scrollIntoView) results.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  document.getElementById("go").addEventListener("click", go);
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { e.preventDefault(); go(); }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
